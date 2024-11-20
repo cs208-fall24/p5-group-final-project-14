@@ -63,13 +63,38 @@ app.post('/student1/comments/delete', function (req, res) {
   res.redirect('/student1/comments')
 })
 
+app.get('/student1/comments/edit/:id', function (req, res) {
+  const id = req.params.id;
+  console.log('Student1 edit comment called with comment ID:' + id)
+  db.get('SELECT * FROM student1Comments WHERE id = (?)', [id], function (err, row) {
+    if (err) {
+      console.log(err)
+    } else {
+    res.render('student1/editcomment', { comment: row })
+    }
+  })
+})
+
+app.post('/student1/editcomment/update/:id', function (req, res) {
+  const id = req.params.id
+  const updatedText = req.body.text;
+
+  db.run('UPDATE student1Comments SET comment = (?) WHERE id = (?)', [updatedText, id], function (err, row) {
+    if (err) {
+      console.log(err)
+    } else {
+      res.redirect('/student1/comments')
+    }
+  })
+})
+
 // Student2 section
 app.get('/student2', function (req, res) {
   console.log('GET called')
   res.render('student2')
 })
 
-// Student4 section
+// Student3 section
 app.get('/student3', function (req, res) {
   console.log('GET called')
   res.render('student3')
