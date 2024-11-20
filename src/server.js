@@ -6,6 +6,12 @@ const sqlite3 = sql.verbose()
 // Create an in memory table to use
 const db = new sqlite3.Database(':memory:')
 
+// Create table(s) on startup
+db.run(`CREATE TABLE student1Comments (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  comment TEXT NOT NULL)`)
+
+
 const app = express()
 app.use(express.static('public'))
 app.set('views', 'views')
@@ -17,16 +23,53 @@ app.get('/', function (req, res) {
   res.render('index')
 })
 
+// Student1 section
 app.get('/student1', function (req, res) {
   console.log('GET called')
   res.render('student1')
 })
 
+app.get('/student1/comments', function (req, res) {
+  const local = { comments: [] }
+  db.each('SELECT id, comment FROM student1Comments', function (err, row) {
+      if (err) {
+      console.log(err)
+      } else {
+      local.comments.push({ id: row.id, comment: row.comment })
+      }
+  }, function (err, numrows) {
+      if (!err) {
+      res.render('student1/comments', local)
+      } else {
+      console.log(err)
+      }
+  })
+  console.log('Student1 get student1/comment called')
+})
+
+app.post('/student1/comments/add', function (req, res) {
+  console.log('Student1 add comment called')
+  const stmt = db.prepare('INSERT INTO student1Comments (comment) VALUES (?)')
+  stmt.run(req.body.comment)
+  stmt.finalize()
+  res.redirect('/student1/comments') 
+})
+
+app.post('/student1/comments/delete', function (req, res) {
+  console.log('Student1 delete comment called')
+  const stmt = db.prepare('DELETE FROM student1Comments where id = (?)')
+  stmt.run(req.body.id)
+  stmt.finalize()
+  res.redirect('/student1/comments')
+})
+
+// Student2 section
 app.get('/student2', function (req, res) {
   console.log('GET called')
   res.render('student2')
 })
 
+// Student4 section
 app.get('/student3', function (req, res) {
   console.log('GET called')
   res.render('student3')
