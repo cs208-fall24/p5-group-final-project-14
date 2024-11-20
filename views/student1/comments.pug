@@ -7,21 +7,22 @@ body
     h1 Seth McDaniel
     h2 
         a(href="/student1") Back to Procrastination
-    section 
+    section(class="subsec") 
         h2 Comments
         ul
             - for (let i = 0; i < comments.length; i++)
                 li= comments[i].comment
                     section 
                         form(action="/student1/comments/delete", method="post")
-                            input(type="hidden", name="id" value=comments[i].id)
-                            input(type="submit", value="Delete!")
-                        a(href='/student1/comments/edit/' + comments[i].id) Edit Comment
-                        
-    section
-        h2 Add your comment! 
-        form(action='/student1/comments/add', method="post")
-            label(for='comment') Add Comment: 
-            input#comment(type='text' name='comment')
-            br
-            input(type='submit' value='Add!')
+                            section(id="commentbuttons")
+                                input(type="hidden", name="id" value=comments[i].id)
+                                input(type="submit", value="Delete!")
+                                a(href='/student1/comments/edit/' + comments[i].id) Edit Comment
+    br                    
+    section(class="subsec")
+        section(class="writteninput")
+            h2 Add your comment! 
+            form(action='/student1/comments/add', method="post")
+                label(for='comment') Add Comment: 
+                input#textentry(type='text' name='comment')
+                input(type='submit' value='Add!')

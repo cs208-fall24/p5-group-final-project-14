@@ -1,4 +1,5 @@
-link(rel='stylesheet' href='css/student1.css')
+doctype html
+link(rel='stylesheet' href='/css/student1.css')
 
 head
     title Procrastination - student1
@@ -6,9 +7,11 @@ body
     h1 Seth McDaniel
     h2 
         a(href="/student1") Procrastination
-    section 
+    section(class="center")
         h2 Edit Comment
 
-        form(action='/student1/editcomment/update/' + comment.id, method='POST')
-            textarea#comment(name="text")= comment.comment 
-            button(type='submit') Update Comment
+        section
+            form(action='/student1/editcomment/update/' + comment.id, method='POST')
+                textarea#textentry(name="text")= comment.comment 
+                br
+                button(type='submit') Update Comment
