@@ -25,8 +25,22 @@ app.get('/', function (req, res) {
 
 // Student1 section
 app.get('/student1', function (req, res) {
-  console.log('GET called')
-  res.render('student1')
+  const local = { comments: [] }
+  db.each('SELECT id, comment FROM student1Comments', function (err, row) {
+      if (err) {
+        console.log(err)
+      } else {
+        local.comments.push({ id: row.id, comment: row.comment })
+      }
+  }, function (err, numrows) {
+      if (!err) {
+        local.comments = local.comments.sort((a, b) => 0.5 - Math.random())
+        res.render('student1', local)
+      } else {
+        console.log(err)
+      }
+  })
+  console.log('Student1 GET index called')
 })
 
 app.get('/student1/comments', function (req, res) {
@@ -44,7 +58,7 @@ app.get('/student1/comments', function (req, res) {
       console.log(err)
       }
   })
-  console.log('Student1 get student1/comment called')
+  console.log('Student1 GET student1/comment called')
 })
 
 app.post('/student1/comments/add', function (req, res) {
