@@ -21,6 +21,8 @@ body
             |let you in! Please make sure to not disturb the retroreflectors 
             |if you find them, they are still being used for measurements and 
             |we will really freak out the scientists on earth if they are moved!
+        img(src='img/LectureDirections.jpg' alt='A picture of the moon with Mare Tranquillitatis circled in red with red arrows pointing at the circle')
+        img(src='img/SpecialDirections.jpg' alt='A picture of one of the retroreflectors from the Apollo 11 mission with a red hand drawn label saying NO TOUCH')
     section
         h2 About
         h3 This program teaches you three important life skills to aid your procrastination:
@@ -55,5 +57,9 @@ body
                     li Find new hobbies and improve your social life! 
                     li Do literally anything else other than boring work!
     section
+        h2 Comments
+        ul
+            - for (let i = 0; i < comments.length && i < 5; i++)
+                li= comments[i].comment
         h2 
             a(href='/student1/comments') See All Comments!
