@@ -1,0 +1,25 @@
+doctype html
+link(rel='stylesheet' href='css/student1.css')
+
+head
+    title Procrastination - student1
+body
+    h1 Seth McDaniel
+    h2 
+        a(href="/student1") Procrastination
+    section 
+        h2 Comments
+        ul
+            - for (let i = 0; i < comments.length; i++)
+                li= comments[i].comment
+                    form(action="/student1/comments/delete", method="post")
+                        input(type="hidden", name="id" value=comments[i].id)
+                        input(type="submit", value="Delete!")
+                        
+    section
+        h2 Add your comment! 
+        form(action='/student1/comments/add', method="post")
+            label(for='comment') Add Comment: 
+            input#comment(type='text' name='comment')
+            br
+            input(type='submit' value='Add!')
