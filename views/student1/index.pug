@@ -2,6 +2,78 @@ doctype html
 link(rel='stylesheet' href='css/student1.css')
 
 head
-    title Party - student1
+    title Procrastination - student1
 body
-    h1 A complete degree on how to party!
+    h1 Seth McDaniel
+
+    ul(class="nav")
+        li 
+            a(href='/') Home Page
+        li 
+            a(href='/student1/comments') Comments Page
+            
+    //Major
+    h2 Major Procrastination! 
+
+    //Section one
+    section(class="subsec")
+        h2 Location
+        p 
+            |This program is currently being held at Mare Tranquillitatis, 
+            |a few kilometers north of where Apollo 11 landed. 
+            |Make sure you bring your student ID badge or the airlock will 
+            strong NOT 
+            |let you in! Please make sure to not disturb the retroreflectors 
+            |if you find them, they are still being used for measurements and 
+            |we will really freak out the scientists on earth if they are moved!
+        //Images
+        div(id="imagesec")
+            img(src='img/LectureDirections.jpg' alt='A picture of the moon with Mare Tranquillitatis circled in red with red arrows pointing at the circle')
+            img(src='img/SpecialDirections.jpg' alt='A picture of one of the retroreflectors from the Apollo 11 mission with a red hand drawn label saying NO TOUCH')
+    
+    //Section two
+    br
+    section(class="subsec")
+        h2 About
+        h3 This program teaches you three important life skills to aid your procrastination:
+        section
+            h3 Delaying tasks
+            p
+                |Learn how to distract yourself to remove the guilty feelings of 
+                |not getting your work done! Our program takes inspiration from many fields 
+                |including, prioritizing the easier work first, arbitrary requirements like 
+                |a perfectly clean workspace, and waiting to have enough time to do everything
+                |in one undisturbed sitting. With this course, you can master delaying your work!
+        section
+            h3 Coping with stress of waiting until the last minute 
+            p
+                |We will teach you how to handle the stress of looming deadlines with verified methods. 
+                |We have skilled professors who will teach you coping mechanisms and instill the mentality 
+                |of "It will work out, or it won't" so you can procrastinate without worry! We will give 
+                |you the skills to overcome the feeling of panic when your deadlines are near!
+
+        section
+            h3 Acceptance of missed deadlines
+            p
+                |This program will make you a better person by removing your guilt of missing important
+                |deadlines! You will be studying different philosophy fields to help you come to terms 
+                |with your missed deadlines without long lasting feelings of inadequacy!
+    
+    //Section three
+    br
+    section(class="subsec")
+        h2 Things To Do:
+        ul
+            li Enjoy more free time! 
+            li Find new hobbies and improve your social life! 
+            li Do literally anything else other than boring work!
+    
+    //Comments
+    br
+    section(class="subsec")
+        h2 Comments
+        ul
+            - for (let i = 0; i < comments.length && i < 5; i++)
+                li= comments[i].comment
+        h2 
+            a(href='/student1/comments') See All Comments!
