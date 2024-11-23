@@ -1,3 +1,150 @@
-body{
-    background-color: orange;
+body {
+    background: radial-gradient(circle, orange, rgb(145, 207, 202)) ;
 }
+
+h1,
+h2,
+h3,
+p,
+li {
+    color: #000;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+}
+
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 23px;
+}
+
+
+
+p {
+    font-size: 18px;
+    padding-left: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.images {
+    text-align: center;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+
+#golden {
+    color: gold;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+
+.aSection {
+    padding: 20px;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: lightcyan;
+
+}
+a:hover {
+    color: #d4af37;
+}
+
+.special-bullet {
+    list-style: none;
+}
+
+.special-bullet li {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.special-bullet li::before {
+    content: "⭐";
+    position: absolute;
+    left: -20px;
+}
+
+.navigation {
+    list-style: none;
+    display: inline-flex;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    padding: 0px;
+    background-color: lightcyan;
+    width: 100%;
+    
+}
+
+.navigation li{
+    padding: 20px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+textarea {
+  width: 100%; 
+  height: 150px; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  background-color: #f8f8f8; 
+  resize: vertical; 
+  font-size: 16px; 
+  
+  color: #333; 
+}
+
+input[type="text"]{
+    padding: 5px 10px;
+    font-size: 16px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    color: #333;
+
+}
+
+input[type="submit"]{
+  padding: 5px 10px;
+  background-color: #111412; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  font-weight: bold; 
+}
+
+button[type="submit"]{
+    padding: 5px 10px;
+    background-color: #111412; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    font-weight: bold; 
+  }

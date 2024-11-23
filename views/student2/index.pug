@@ -2,6 +2,81 @@ doctype html
 link(rel='stylesheet' href='css/student2.css')
 
 head
-    title Under Water Basket weaver (Masters) - student 2
+    title Egyptology - student 2
 body
-    h1 You will learn how to weave baskets underwater
+    h1 Connor Mackin
+
+    //page navigation
+    ul(class= "navigation")
+        li
+            a(href= "/") Home Page
+        li  
+            a(href= "/student2/comments") Comments
+
+    h2 Egyptology Major 
+
+
+    section(class= "aSection") 
+        h2 Location 
+        p 
+            |This major is offered at our satellite campus located at the base of the 
+            span(id= "golden") Golden Pyramids 
+            | in Egypt. Located on the banks of the luminous Nile, 
+            | where the waters shimmer with ancient magic, students find themselves immersed in the rich tapestry of history and legend.
+            | From secret underground archives to sunlit courtyards echoing with chants of the past, 
+            | the campus itself is a living, breathing artifact of ancient Egyptian grandeur.
+        div(class="images")
+            img(src="img/Serapeum_University.jpg", alt="A stunning Image of the Serapeum University")
+
+    section(class= "aSection")
+        h2 About
+        section(class= "aSection")
+            h3 Fascinating Topics! 
+            p 
+                |Delve into the fascinating world of ancient Egypt! As an Egyptology major, you'll study 
+                |the language, culture, and history of one of the most influential civilizations in human history.
+                | Learn to read hieroglyphs, analyze ancient texts, and uncover the secrets of monumental structures 
+                |like the pyramids and temples. Your studies will also explore the daily lives of ancient Egyptians, 
+                |their religious practices, and their enduring impact on modern society.
+        section(class= "aSection") 
+            h3 Exciting Course Structure! 
+            p
+                |The Egyptology program offers a rich and diverse curriculum designed to challenge and inspire. 
+                |Expect a mix of lecture-based courses, hands-on workshops, and fieldwork opportunities. 
+                |From "Introduction to Egyptian Mythology" to advanced classes like "Decoding Royal Tomb Inscriptions," your 
+                |schedule will be packed with exciting topics. While rigorous, the balance of theoretical and practical 
+                |learning ensures an engaging academic journey.
+
+
+        section(class= "aSection") 
+            h3 Career Opportunities! 
+            p 
+                |Graduates of the Egyptology program have a world of opportunities waiting for them. 
+                |Many pursue careers as archaeologists, museum curators, or historians, working to preserve 
+                |and share the wonders of ancient Egypt. Others apply their skills to fields like cultural 
+                |resource management, education, or even entertainment, contributing to movies and documentaries. 
+                |Your expertise in deciphering the past will open doors to unique and rewarding career paths.
+
+
+    
+        
+    section(class= "aSection") 
+        h2 Things to do 
+        ul(class= "special-bullet")
+            li Decode Ancient Hieroglyphics: Who knows, you might uncover a long lost pharaoh's secret! 
+            li Excavate a Virtual Tomb: Participate in simulated digs to uncover artifacts and solve archaeological mysteries. 
+            li Craft Your Own Amulet: Learn the art of creating protective charms inspired by ancient Egyptian traditions, perfect for warding off bad vibes and impressing friends! 
+        div(class= "images")
+            img(src="/img/coolLearning.png", alt="Students deciphering egyptian texts")
+    section(class= "aSection")
+        h2 Comments 
+        if comments.length > 0
+            ul 
+                each comment, index in comments.slice(0,5)
+                    li= comment.comment
+        
+
+
+
+
+
