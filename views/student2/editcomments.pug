@@ -1,0 +1,20 @@
+doctype html
+link(rel='stylesheet' href='/css/student2.css')
+
+head
+    title Egyptology Edit Comments - student2
+body
+    h1 Connor Mackin
+
+    h2
+        ul(class= "navigation")
+            li
+                a(href= "/student2") Return to Egyptology
+            li
+                a(href= "/student2/comments") Return to Egyptology Comments
+    
+    section(class= "aSection")
+        h2 Edit Comment 
+            form(action="/student2/edit/update/" + comment.id, method="POST")
+                textarea(name="text", required)= comment.comment
+                button(type="submit") Update Comment
